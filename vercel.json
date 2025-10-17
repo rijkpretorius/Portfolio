@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "public": true,
-  "outputDirectory": ".",
   "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
+    { "src": "index.html", "use": "@vercel/static" }
   ]
 }
+
 
