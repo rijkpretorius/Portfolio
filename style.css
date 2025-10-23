@@ -1,35 +1,84 @@
 body {
-  background-color: #f5f5f5;
-  color: #222;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-h1, h2, h3 {
-  margin-top: 1rem;
+header {
+    background-color: #007bff; /* Blue for a techy feel */
+    color: white;
+    text-align: center;
+    padding: 2rem;
 }
 
-a {
-  color: #007bff;
-  text-decoration: none;
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-a:hover {
-  text-decoration: underline;
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
 }
 
 section {
-  margin: 2rem 0;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.btn {
-  display: inline-block;
-  background: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-top: 10px;
+h2 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+.social-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
