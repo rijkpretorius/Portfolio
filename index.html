@@ -6,7 +6,6 @@
   <title>Rijk Pretorius — Data Scientist</title>
   <meta name="description" content="Rijk Pretorius — Data Scientist. Portfolio showcasing skills, projects and contact information." />
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -30,8 +29,6 @@
       margin:0;
       background:var(--bg);
       color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       line-height:1.45;
       padding:32px 20px;
       display:flex;
@@ -39,147 +36,53 @@
       align-items:flex-start;
     }
 
-    .container{
-      width:100%;
-      max-width:var(--max-width);
-      margin:0 auto;
-    }
+    .container{width:100%;max-width:var(--max-width);margin:0 auto;}
+    header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px;}
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      margin-bottom:28px;
-    }
+    .brand{display:flex;gap:12px;align-items:center;}
+    .logo{width:58px;height:58px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;font-weight:700;box-shadow:var(--shadow);}
 
-    .brand{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
+    .nav a{text-decoration:none;color:var(--muted);margin-left:18px;font-weight:600;font-size:14px;}
 
-    .logo{
-      width:58px;
-      height:58px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:white;
-      font-weight:700;
-      box-shadow:var(--shadow);
-    }
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:start;margin-bottom:40px;}
 
-    .nav a{
-      text-decoration:none;
-      color:var(--muted);
-      margin-left:18px;
-      font-weight:600;
-      font-size:14px;
-    }
+    .intro{background:linear-gradient(180deg, rgba(15,23,42,0.02), transparent);padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);}
 
-    .hero{
-      display:grid;
-      grid-template-columns: 1fr 380px;
-      gap:32px;
-      align-items:start;
-      margin-bottom:40px;
-    }
+    .eyebrow{color:var(--muted);font-weight:600;font-size:13px;margin-bottom:8px}
+    h1{margin:0 0 10px 0;font-size:32px}
+    .tagline{color:var(--muted);margin-bottom:18px}
 
-    .intro{
-      background:linear-gradient(180deg, rgba(15,23,42,0.02), transparent);
-      padding:28px;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer;text-decoration:none;}
+    .btn-primary{background:var(--accent);color:white;box-shadow:0 8px 30px rgba(15,108,255,0.12)}
+    .btn-ghost{border:1px solid var(--glass);background:transparent;color:var(--text)}
 
-    .eyebrow{color:var(--muted); font-weight:600; font-size:13px; margin-bottom:8px}
-    h1{margin:0 0 10px 0; font-size:32px}
-    .tagline{color:var(--muted); margin-bottom:18px}
+    .profile-card{background:var(--card);padding:22px;border-radius:12px;box-shadow:var(--shadow);position:sticky;top:32px;height:fit-content;}
 
-    .cta-row{display:flex; gap:12px; align-items:center}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 16px;
-      border-radius:10px;
-      font-weight:700;
-      cursor:pointer;
-      text-decoration:none;
-    }
-    .btn-primary{background:var(--accent); color:white; box-shadow:0 8px 30px rgba(15,108,255,0.12)}
-    .btn-ghost{border:1px solid var(--glass); background:transparent; color:var(--text)}
-
-    .profile-card{
-      background:var(--card);
-      padding:22px;
-      border-radius:12px;
-      box-shadow:var(--shadow);
-      position:sticky;
-      top:32px;
-      height:fit-content;
-    }
-
-    .profile-pic{
-      width:78px; height:78px; border-radius:10px;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:white; font-weight:700; display:grid; place-items:center; font-size:22px;
-      margin-bottom:12px;
-    }
+    .profile-pic{width:78px;height:78px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;font-weight:700;display:grid;place-items:center;font-size:22px;margin-bottom:12px;}
 
     .muted{color:var(--muted)}
 
-    .skills{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
-    .skill{background:var(--glass); padding:8px 10px; border-radius:8px; font-weight:600; font-size:13px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .skill{background:var(--glass);padding:8px 10px;border-radius:8px;font-weight:600;font-size:13px}
 
-    /* Projects */
-    .section{
-      margin-bottom:36px;
-    }
+    .section{margin-bottom:36px;}
+    .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .projects-grid{display:grid;grid-template-columns: repeat(auto-fill,minmax(260px,1fr));gap:18px;}
 
-    .section-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
-    .projects-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
-      gap:18px;
-    }
+    .card{background:white;border-radius:12px;padding:16px;box-shadow:0 8px 30px rgba(2,6,23,0.04);border:1px solid rgba(15,23,42,0.03);}
+    .project-title{font-weight:700;margin:0 0 8px 0}
+    .project-desc{color:var(--muted);font-size:14px;margin-bottom:10px}
+    .project-tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:var(--glass);font-weight:700}
 
-    .card{
-      background:white;
-      border-radius:12px;
-      padding:16px;
-      box-shadow:0 8px 30px rgba(2,6,23,0.04);
-      border:1px solid rgba(15,23,42,0.03);
-    }
-
-    .project-title{font-weight:700; margin:0 0 8px 0}
-    .project-desc{color:var(--muted); font-size:14px; margin-bottom:10px}
-    .project-tags{display:flex; gap:8px; flex-wrap:wrap}
-    .tag{font-size:12px; padding:6px 8px; border-radius:8px; background:var(--glass); font-weight:700}
-
-    /* About */
-    .about{display:flex; gap:20px; align-items:flex-start}
+    .about{display:flex;gap:20px;align-items:flex-start}
     .about p{color:var(--muted)}
 
-    /* Contact footer */
-    footer{
-      margin-top:20px;
-      padding:18px;
-      border-radius:12px;
-      background:linear-gradient(180deg, rgba(6,182,212,0.03), transparent);
-      display:flex; justify-content:space-between; align-items:center;
-    }
+    footer{margin-top:20px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(6,182,212,0.03), transparent);display:flex;justify-content:space-between;align-items:center;}
+    .socials a{margin-left:12px;text-decoration:none;color:var(--muted);font-weight:700}
 
-    .socials a{margin-left:12px; text-decoration:none; color:var(--muted); font-weight:700}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .profile-card{position:static}
-    }
-
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.profile-card{position:static}}
   </style>
 </head>
 <body>
@@ -192,7 +95,6 @@
           <div style="font-size:13px;color:var(--muted);margin-top:3px">Data Scientist</div>
         </div>
       </div>
-
       <nav class="nav">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
@@ -226,33 +128,27 @@
               <div class="skill">Data Viz</div>
             </div>
           </div>
-
         </div>
 
         <aside class="profile-card">
           <div class="profile-pic">RP</div>
           <div style="font-weight:800">Rijk Pretorius</div>
           <div class="muted" style="font-size:14px;margin-top:4px">Data Scientist</div>
-
           <div style="margin-top:12px">
             <div class="muted">Location</div>
             <div style="font-weight:700">South Africa</div>
           </div>
-
           <div style="margin-top:12px">
             <div class="muted">Contact</div>
-            <div style="font-weight:700"> <a href="mailto:your-email@example.com">your-email@example.com</a></div>
+            <div style="font-weight:700"><a href="mailto:your-email@example.com">your-email@example.com</a></div>
           </div>
-
           <div style="margin-top:12px">
             <div class="muted">Links</div>
             <div style="margin-top:6px">
-              <!-- Replace # with your actual profile links -->
               <a class="muted" href="#" target="_blank">GitHub</a> •
               <a class="muted" href="#" target="_blank">LinkedIn</a>
             </div>
           </div>
-
         </aside>
       </section>
 
@@ -263,7 +159,6 @@
         </div>
 
         <div class="projects-grid">
-
           <article class="card">
             <div class="project-title">Sales Forecasting — Time Series</div>
             <div class="project-desc">Built ARIMA and LSTM models to forecast weekly sales for a retail chain. Focus: feature engineering, cross-validation, and deployment-ready notebook.</div>
@@ -273,7 +168,7 @@
               <div class="tag">Time Series</div>
             </div>
             <div style="margin-top:12px">
-              <a href="#" class="btn btn-ghost">View Notebook</a>
+              <a href="projects/forecasting.html" target="_blank" class="btn btn-ghost">View Notebook</a>
             </div>
           </article>
 
@@ -286,7 +181,7 @@
               <div class="tag">Clustering</div>
             </div>
             <div style="margin-top:12px">
-              <a href="#" class="btn btn-ghost">View Report</a>
+              <a href="projects/segmentation.html" target="_blank" class="btn btn-ghost">View Report</a>
             </div>
           </article>
 
@@ -299,12 +194,9 @@
               <div class="tag">Dash</div>
             </div>
             <div style="margin-top:12px">
-              <a href="#" class="btn btn-ghost">Live Demo</a>
+              <a href="projects/dashboard.html" target="_blank" class="btn btn-ghost">View Project</a>
             </div>
           </article>
-
-          <!-- Add more project cards as needed -->
-
         </div>
       </section>
 
@@ -313,16 +205,12 @@
           <h2 style="margin:0">About</h2>
           <div class="muted">Professional summary</div>
         </div>
-
         <div class="about">
           <div style="flex:1">
             <p>I am a data scientist experienced in cleaning and analyzing messy datasets, building production-ready machine learning models, and communicating results to stakeholders. I enjoy turning complex problems into clear, reproducible analyses using tools like Python, R, SQL and modern visualization libraries.</p>
-
             <p>My work emphasizes reproducibility (well-documented notebooks and pipelines), strong validation practices, and building models that create measurable business value.</p>
-
             <p>If you'd like to collaborate or see specific notebooks and code, check the Projects section or reach out via the contact links below.</p>
           </div>
-
           <div style="width:260px">
             <div class="card">
               <div style="font-weight:800">Highlights</div>
@@ -342,28 +230,23 @@
           <h2 style="margin:0">Contact</h2>
           <div class="muted">Let's talk about data</div>
         </div>
-
         <div class="card">
           <p class="muted">Email</p>
           <p style="font-weight:700;margin-top:6px"><a href="mailto:your-email@example.com">your-email@example.com</a></p>
-
           <p class="muted" style="margin-top:12px">Profiles</p>
           <div class="socials" style="margin-top:8px">
-            <!-- Replace # with your profiles -->
             <a href="#" target="_blank">GitHub</a>
             <a href="#" target="_blank">LinkedIn</a>
             <a href="#" target="_blank">Kaggle</a>
           </div>
         </div>
       </section>
-
     </main>
 
     <footer>
       <div>© <strong>Rijk Pretorius</strong> — Data Science Portfolio</div>
       <div class="muted">Built with care • Ready for Vercel</div>
     </footer>
-
   </div>
 </body>
 </html>
