@@ -32,11 +32,71 @@
 
     /* Header */
     .site-header{text-align:center;margin-bottom:56px;}
+    .name-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+    }
     .site-header h1{
       margin:0;
       font-size:30px;
       font-weight:700;
       letter-spacing:1px;
+    }
+
+    /* About button + popover */
+    .about-wrap{position:relative;display:inline-flex;}
+    .about-btn{
+      width:28px;
+      height:28px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:var(--card);
+      border:1px solid var(--card-border);
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      padding:0;
+      transition:background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    .about-btn:hover{background:#1c1c1c;border-color:#3a3a3a;color:var(--text);}
+    .about-popover{
+      position:absolute;
+      top:calc(100% + 12px);
+      left:50%;
+      transform:translateX(-50%) translateY(-4px);
+      display:none;
+      width:340px;
+      max-width:80vw;
+      padding:16px 18px;
+      background:var(--card);
+      border:1px solid var(--card-border);
+      border-radius:10px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.5);
+      z-index:10;
+      opacity:0;
+      text-align:left;
+      transition:opacity .12s ease, transform .12s ease;
+    }
+    .about-popover.open{display:block;opacity:1;transform:translateX(-50%) translateY(0);}
+    .about-popover::before{
+      content:"";
+      position:absolute;
+      bottom:100%;
+      left:50%;
+      transform:translateX(-50%);
+      border:6px solid transparent;
+      border-bottom-color:var(--card-border);
+    }
+    .about-popover p{
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.6;
     }
     .site-header .subtitle{
       margin-top:8px;
@@ -163,7 +223,15 @@
 <body>
   <div class="container">
     <header class="site-header">
-      <h1>Rijk Pretorius</h1>
+      <div class="name-row">
+        <h1>Rijk Pretorius</h1>
+        <span class="about-wrap">
+          <button type="button" class="about-btn" id="about-toggle" aria-label="About" title="About" aria-expanded="false">?</button>
+          <div class="about-popover" id="about-popover" role="dialog" aria-label="About Rijk Pretorius">
+            <p>Hey! I'm a Computer Science and Statistics graduate who loves building software and digging into data to uncover useful insights. Whether I'm coding reliable applications or modeling complex datasets, I enjoy solving problems at the intersection of tech and analytics. Outside of work, I'm usually following sports, especially football, rugby, and cricket.</p>
+          </div>
+        </span>
+      </div>
       <div class="subtitle">Data Science & Software Development</div>
 
       <div class="socials">
@@ -282,6 +350,36 @@
       // Close on Escape
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closePopover();
+      });
+    })();
+
+    // About popover
+    (function () {
+      var aboutToggle = document.getElementById('about-toggle');
+      var aboutPopover = document.getElementById('about-popover');
+
+      function closeAbout() {
+        aboutPopover.classList.remove('open');
+        aboutToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      aboutToggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (aboutPopover.classList.contains('open')) {
+          closeAbout();
+        } else {
+          aboutPopover.classList.add('open');
+          aboutToggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!aboutPopover.contains(e.target) && !aboutToggle.contains(e.target)) {
+          closeAbout();
+        }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAbout();
       });
     })();
   </script>
